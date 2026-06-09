@@ -86,7 +86,7 @@ N+1 problem is a data access pattern where an initial query is followed by N add
          { "user": "bob" }
       ]
      ``` 
-👉 一次搞定
+   👉 一次搞定
 
 2. 不好的設計(N+1問題)
    - Step 1: 先拿 log
@@ -105,5 +105,9 @@ N+1 problem is a data access pattern where an initial query is followed by N add
       如果有100筆log:
       1+100 = 101 requests
       100ms x 100 requests
+
+3. 例如:
+   - Audit Log API (1 request) + User/Avatar API (N requests per row)
+   - N+1 problem = 先拿列表，再對每一筆資料重複打 API，導致 request 數量線性爆炸
 
 ---      
