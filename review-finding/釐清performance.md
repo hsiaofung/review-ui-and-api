@@ -45,3 +45,11 @@ const categories = list.map(x => x.category)
       Total                55ms  
 
       - RTT(Round Trip Time): 往返時間。一個封包從瀏覽器送到伺服器，再從伺服器回到瀏覽器所花的時間。
+
+7. 可以透過Chrome Dev Tool Timing 查出某一個API 的respons time (Request/Response Waiting for server response)，例如: user API 是110ms。      
+
+8. TTFB: 瀏覽器正在等待回應的第一個位元組。TTFB 是「Time To First Byte」的縮寫，這段時間包括 1 次往返延遲，以及伺服器準備回應所花的時間。以上例來說就是110ms。
+
+9. 結論:
+   - User API has ~111ms TTFB, which is within normal range.
+   - However, the performance concern comes from potential per-row API calls (N+1 requests), not the latency of a single request.
