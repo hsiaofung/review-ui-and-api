@@ -1,3 +1,4 @@
+<!-- Usage: UI/UX spec 和Figma的畫面不一致。  -->
 Issue #1
 
 Navigation View design inconsistency
